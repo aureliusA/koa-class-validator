@@ -1,11 +1,10 @@
 {
-  "name": "strapi-class-validator",
+  "name": "koa-class-validator",
   "version": "1.0.0",
-  "description": "Provides strapi class-validator middleware",
+  "description": "Provides koa class-validator middleware",
   "scripts": {
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "prebuild": "npm run lint",
-    "prepare": "tsc",
     "build": "tsc"
   },
   "author": "",
@@ -23,7 +22,6 @@
     "./dist": "./dist/index.js",
     "./package.json": "./package.json",
     "./dist/*": "./dist/*"
-
   },
   "files": [
     "dist/"
@@ -31,9 +29,6 @@
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
-  },
-  "peerDependencies": {
-    "@strapi/strapi": ">=5.0.0 <6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
@@ -48,7 +43,11 @@
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.39.1"
   },
+  "peerDependencies": {
+    "koa": ">=2.0.0"
+  },
   "dependencies": {
+    "@types/koa": "^3.0.1",
     "class-validator": "^0.14.2"
   }
 }

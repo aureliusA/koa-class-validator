@@ -1,8 +1,6 @@
 import { validate, ValidationError, ValidatorOptions } from 'class-validator';
 import { Context, Next } from 'koa';
 
-//TODO move to separated npm package
-
 export class StrapiValidator<T extends object> {
   readonly instance: T;
   readonly validatorOptions: ValidatorOptions = {
@@ -19,7 +17,7 @@ export class StrapiValidator<T extends object> {
     if (result.length) {
       const message = this.extractErrorMessages(result);
 
-      ctx.throw(message.join('. '), 422);
+      ctx.throw(422, message.join('. '));
     }
 
     ctx.transformedResults = this.instance;
@@ -33,7 +31,7 @@ export class StrapiValidator<T extends object> {
     if (result.length) {
       const message = this.extractErrorMessages(result);
 
-      ctx.throw(message.join('. '), 422);
+      ctx.throw(422, message.join('. '));
     }
 
     return this.instance;
@@ -45,7 +43,7 @@ export class StrapiValidator<T extends object> {
     if (result.length) {
       const message = this.extractErrorMessages(result);
 
-      ctx.throw(message.join('. '), 422);
+      ctx.throw(422, message.join('. '));
     }
 
     return next();
