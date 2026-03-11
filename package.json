@@ -1,0 +1,54 @@
+{
+  "name": "strapi-class-validator",
+  "version": "1.0.0",
+  "description": "Provides strapi class-validator middleware",
+  "scripts": {
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "prebuild": "npm run lint",
+    "prepare": "tsc",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./dist": "./dist/index.js",
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": ">=5.0.0 <6.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "i": "^0.3.7",
+    "npm": "^11.5.2",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.39.1"
+  },
+  "dependencies": {
+    "class-validator": "^0.14.2"
+  }
+}
