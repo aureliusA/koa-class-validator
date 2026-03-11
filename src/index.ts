@@ -1,7 +1,7 @@
 import { validate, ValidationError, ValidatorOptions } from 'class-validator';
 import { Context, Next } from 'koa';
 
-export class StrapiValidator<T extends object> {
+export class KoaValidator<T extends object> {
   readonly instance: T;
   readonly validatorOptions: ValidatorOptions = {
     whitelist: true,
